@@ -1,10 +1,17 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "avnadmin",
+    "password": "AVNS_NXXLy3Qm6mgXZQOq39S",
+    "database": "ic71302DB",
+    "host": "pg-ic71302-ic-71302.c.aivencloud.com",
+    "dialect": "postgres",
+    "port": "28236",
+    "SSLMode": "require",
+    "dialectOptions": {
+      "ssl": {
+        "rejectUnauthorized": false     
+      }
+    }
   },
   "test": {
     "username": "root",
