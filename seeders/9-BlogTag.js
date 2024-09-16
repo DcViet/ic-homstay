@@ -5,27 +5,23 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     let items = [
       {
-        name: "Nổi bật",
+        blogId: 1,
+        tagId: 1,
       },
       {
-        name: "Ẩm thực",
+        blogId: 1,
+        tagId: 2,
       },
-      {
-        name: "Câu chuyện",
-      },
-      {
-        name: "Chia sẻ",
-      },
+      
     ];
     items.forEach((item) => {
       item.createdAt = Sequelize.literal("NOW()");
       item.updatedAt = Sequelize.literal("NOW()");
     });
-    await queryInterface.bulkInsert("Tags", items, {});
+    await queryInterface.bulkInsert("BlogTag", items, {});
   },
 
   async down(queryInterface, Sequelize) {
     await queryInterface.sequelize.query('TRUNCATE TABLE "Blogs" RESTART IDENTITY CASCADE;');
-
   },
 };

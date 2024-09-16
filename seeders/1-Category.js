@@ -4,11 +4,11 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     const items = [
-      { name: "Sống", },
-      { name: "Đi", },
-      { name: "Thở", },
-      { name: "Thấy", },
-      { name: "Yêu", },
+      { name: "Sống" },
+      { name: "Đi" },
+      { name: "Thở" },
+      { name: "Thấy" },
+      { name: "Yêu" },
     ];
     items.forEach((item) => {
       item.createdAt = Sequelize.literal("NOW()");
@@ -18,6 +18,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Categories", null, {});
+    await queryInterface.sequelize.query('TRUNCATE TABLE "Blogs" RESTART IDENTITY CASCADE;');
+
   },
 };

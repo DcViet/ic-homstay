@@ -28,7 +28,7 @@ module.exports = {
         title: "Tiliz Homestay",
         subject:
           "Nơi đây, bạn có thể thoải mái thả lỏng, tạm quên đi những bộn bề của cuộc sống. Hãy đến và tận hưởng những giây phút thư giãn bình yên, không cần cầu kỳ, chỉ cần là chính bạn.",
-      }
+      },
     ];
 
     items.forEach((item) => {
@@ -39,6 +39,7 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Contents", null, {});
+    await queryInterface.sequelize.query('TRUNCATE TABLE "Blogs" RESTART IDENTITY CASCADE;');
+
   },
 };

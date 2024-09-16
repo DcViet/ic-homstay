@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 8000;
 const expressHandlebars = require('express-handlebars');
-const { routes } = require('./routes/homeRouter');
+const { homeRouter } = require('./routes/homeRouter');
 
 //cau hinh public static folder
 app.use(express.static(__dirname + '/public'));
@@ -15,13 +15,8 @@ app.engine('hbs', expressHandlebars.engine({
     partialsDir: __dirname + '/views/partials',
     extname: 'hbs',
     defaultLayout: 'layout',
-    runtimeOptions: {
-        allowProtoPropertiesByDefault: true
-    },
-    helpers: {
-        
-    }
 }));
+
 app.set('view engine', 'hbs');
 
 //cau hinh doc du lieu post tu body
@@ -30,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 //routes
-app.use('/', require('./routes/homeRouter'));
+app.use('/api', homeRouter);
 // app.use('/blogs', require('./routes/blogsRouter'));
 
 
