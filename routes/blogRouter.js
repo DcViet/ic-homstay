@@ -2,10 +2,9 @@
 
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/homeController');
+const controller = require('../controllers/blogController');
 
-console.log('Controller:', controller);
-router.get('/', controller.showHomepage);
+router.get('/', controller.viewDetails);
 
 // router.get('/:page', controller.showPage);
 

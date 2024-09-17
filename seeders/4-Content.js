@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         title:
-          "Thư Giãn Cuối Tuần Tại Tiliz Homestay – Những Điều Nhỏ Bé Mà Dễ Thương",
+          "Thư Giãn Cuối Tuần Tại Tiliz Homestay Những Điều Nhỏ Bé Mà Dễ Thương",
         subject:
           "Không cần phải đi xa, chỉ cần một chút thời gian và một nơi thật yên bình, bạn đã có thể tận hưởng những phút giây thư giãn đúng nghĩa.",
       },
